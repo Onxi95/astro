@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,5 +22,8 @@ import Card from "../components/Card.astro";
       This site will update as I complete more of the tutorial, so keep checking
       back and see how my journey is going!
     </p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
   </main>
 </Layout>
