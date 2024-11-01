@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { ReactCounter } from '../components/counter';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -33,6 +34,7 @@ import Layout from '../layouts/Layout.astro';
 			</defs>
 		</svg>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<ReactCounter client:load />
 	</main>
 </Layout>
 
