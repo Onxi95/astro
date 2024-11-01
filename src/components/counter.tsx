@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useStore } from "@nanostores/react";
+import { counterStore } from "../stores/counterStore";
 
 export const ReactCounter = () => {
-    const [count, setCount] = useState(0);
+    const counter = useStore(counterStore)
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <button onClick={() => setCount((prev) => prev - 1)}>Decremnt</button>
-            {count}
-            <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
+            <button onClick={() => counterStore.set(counterStore.get() - 1)}>Decremnt</button>
+            {counter}
+            <button onClick={() => counterStore.set(counterStore.get() + 1)}>Increment</button>
         </div>
     )
 }

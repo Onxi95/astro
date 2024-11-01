@@ -1,12 +1,14 @@
 <script setup>
-import { ref } from 'vue'
-const count = ref(0)
+import { useStore } from '@nanostores/vue'
+import { counterStore } from '../stores/counterStore'
+
+const count = useStore(counterStore)
 </script>
 
 <template>
   <div style="display: flex; flex-direction: column; align-items: center;">
-    <button @click="count--">decrement</button>
+    <button @click="counterStore.set(counterStore.get() - 1)">decrement</button>
     {{ count }}
-    <button @click="count++">increment</button>
+    <button @click="counterStore.set(counterStore.get() + 1)">increment</button>
   </div>
 </template>
